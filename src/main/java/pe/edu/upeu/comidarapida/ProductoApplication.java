@@ -29,17 +29,22 @@ public class ProductoApplication extends Application {
 		builder.application().setWebApplicationType(WebApplicationType.NONE);
 		configurableApplicationContext = builder.run(getParameters().getRaw().toArray(new String[0]));
 
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/maingui.fxml"));
+		//FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/maingui.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/login_ff.fxml"));
 		fxmlLoader.setControllerFactory(configurableApplicationContext::getBean);
 		parent= fxmlLoader.load();
 	}
 
 	@Override
 	public void start(Stage stage) throws Exception {
-		Screen screen = Screen.getPrimary();
-		Rectangle2D bounds = screen.getBounds();
-		stage.setScene(new Scene(parent,bounds.getWidth(), bounds.getHeight()-80));
-		stage.setTitle("Spring Java-FX");
+//		Screen screen = Screen.getPrimary();
+//		Rectangle2D bounds = screen.getBounds();
+//		stage.setScene(new Scene(parent,bounds.getWidth(), bounds.getHeight()-80));
+//		stage.setTitle("Spring Java-FX");
+//		stage.show();
+
+		stage.setScene(new Scene(parent));
+		stage.setTitle("JCLV");
 		stage.show();
 	}
 
